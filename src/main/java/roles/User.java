@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class User {
+public class User implements Logable {
     private static String dbLogin;
     private static String dbPass;
 
@@ -28,10 +28,10 @@ public class User {
     public static void setDbPass(String dbPass) {
         User.dbPass = dbPass;
     }
-    public static void dbConnect() throws SQLException {
-        Connection connection = DriverManager.getConnection("jdbc:postgresql://172.20.8.18:5432/kp0092_23", getDbLogin(), getDbPass());
+    public Connection dbConnect() throws SQLException {
+        return DriverManager.getConnection("jdbc:postgresql://172.20.8.18:5432/kp0092_23", getDbLogin(), getDbPass());
     }
-    public void Menu(){
+    public void menu(){
         System.out.println("1. Найти Товар по названию");
         System.out.println("2. Все изделия с указаниям поставщиков");
         System.out.println("3. Самое дешевое изделие в категории ______");
