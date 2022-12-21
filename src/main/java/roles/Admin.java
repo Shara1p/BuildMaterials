@@ -7,9 +7,11 @@ public class Admin extends User implements Logable{
 
     @Override
     public void menu() {
-        System.out.println("1. РљР°СЃС‚РѕРјРЅС‹Р№ Р·Р°РїСЂРѕСЃ");
-        System.out.println("2. РЎРѕР·РґР°С‚СЊ РќРѕРІРѕРіРѕ РџРѕР»СЊР·РѕРІР°С‚РµР»СЏ");
-        System.out.println("3. РЎРїРёСЃРѕРє РїРѕСЃС‚Р°РІС‰РёРєРѕРІ");
-        System.out.println("4. РљР°С‚РµРіРѕСЂРёРё РёР·РґРµР»РёР№");
+        System.out.println("1. Кастомный запрос");
+        System.out.println("2. Создать Нового Пользователя");
+        System.out.println("3. Список поставщиков");
+        System.out.println("4. Категории изделий");
+        System.out.println("5. Создать новую таблицу");
     }
+
 }

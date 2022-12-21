@@ -7,6 +7,6 @@ public class Worker extends User implements Logable{
 
     @Override
     public void menu() {
-        System.out.println("1.Р”РѕР±Р°РІРёС‚СЊ РЅРѕРІС‹Р№ РїСЂРµРґРјРµС‚");
+        System.out.println("1.Добавить новый предмет");
     }
 }

@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65fe2252-b565-41e1-885b-ce52279d3bad" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/roles/Logable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/44ff9dff-f1f7-4715-a6e4-4d5222cb1907.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/44ff9dff-f1f7-4715-a6e4-4d5222cb1907.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/roles/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Logable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Logable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/roles/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/roles/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Worker.java" afterDir="false" />
     </list>
@@ -72,7 +75,12 @@
   "keyToString": {
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm"
+    "last_opened_file_path": "C:/Users/nerdy/IdeaProjects/BuildingMaterials",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "File.Encoding"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -84,6 +92,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="BuildingMaterials.main" />
+      <option name="VM_PARAMETERS" value="-Dfile.encoding=UTF-8" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -102,7 +111,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671464376607</updated>
-      <workItem from="1671464379159" duration="11194000" />
+      <workItem from="1671464379159" duration="11496000" />
+      <workItem from="1671534937162" duration="3622000" />
+      <workItem from="1671538574012" duration="2047000" />
+      <workItem from="1671540653488" duration="4412000" />
+      <workItem from="1671629612970" duration="3992000" />
+      <workItem from="1671633616948" duration="552000" />
+      <workItem from="1671634176795" duration="4450000" />
     </task>
     <servers />
   </component>
@@ -119,5 +134,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

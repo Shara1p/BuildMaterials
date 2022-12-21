@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="windows-1251">
+    <file url="file://$PROJECT_DIR$/src/main/java/Main.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/roles/Admin.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/roles/Logable.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/roles/User.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/roles/Worker.java" charset="windows-1251" />
+    <file url="PROJECT" charset="windows-1251" />
+  </component>
+</project>
