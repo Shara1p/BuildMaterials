@@ -1,3 +1,4 @@
+import org.postgresql.util.PSQLException;
 import roles.Admin;
 import roles.Logable;
 import roles.User;
@@ -42,7 +43,36 @@ public class Main {
 
         while (true) {
             user.menu();
-            if (user instanceof User) {
+            if (user instanceof Admin) {
+
+
+            } else if (user instanceof Worker) {
+                choose = scan.nextInt();
+                scan.nextLine();
+                switch (choose){
+                    case 1:
+                        ((Worker)user).addItem(userConnect);
+                        break;
+                    case 2:
+                        ((Worker)user).showMaintable(userConnect);
+                        break;
+                    case 3:
+                        try {
+                            ((Worker)user).delItem(userConnect);
+                        } catch (PSQLException e){
+
+                        }
+                        break;
+                    case 4:
+                        ((Worker)user).haveUpd(userConnect);
+                        break;
+                    case 5:
+                        ((Worker)user).showHave(userConnect);
+                        break;
+                    case 6:
+                        System.exit(0);
+                }
+            } else {
                 choose = scan.nextInt();
                 scan.nextLine();
                 switch (choose) {
@@ -123,11 +153,6 @@ public class Main {
                     case 7:
                         System.exit(0);
                 }
-
-            } else if (user instanceof Worker) {
-                System.out.println();
-            } else {
-
             }
         }
     }
