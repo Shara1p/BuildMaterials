@@ -17,38 +17,41 @@ public class Main {
         Scanner scan = new Scanner(System.in, "windows-1251");
 
         System.out.println("Здравствуйте! Вы кто?");
-        System.out.println("1.Мне просто нужна мебель");
+        System.out.println("1.Я просто хочу купить");
         System.out.println("2.Я работник склада");
         System.out.println("3.Я админ склада");
         int choose = scan.nextInt();
         scan.nextLine();
         System.out.println("Введите логин и пароль");
-        Logable user = null;
+        Logable user = switch (choose) {
+            case 1 -> new User(scan.nextLine(), scan.nextLine());
+            case 2 -> new Worker(scan.nextLine(), scan.nextLine());
+            case 3 -> new Admin(scan.nextLine(), scan.nextLine());
+            default -> null;
+        };
 
 
-        switch (choose) {
-            case 1:
-                user = new User(scan.nextLine(), scan.nextLine());
-                break;
-            case 2:
-                user = new Worker(scan.nextLine(), scan.nextLine());
-                break;
-            case 3:
-                user = new Admin(scan.nextLine(), scan.nextLine());
-                break;
-        }
         assert user != null;
         Connection userConnect = user.dbConnect();
 
 
         while (true) {
             user.menu();
+            choose = scan.nextInt();
+            scan.nextLine();
             if (user instanceof Admin) {
-
-
+                switch (choose) {
+                    case 1 -> ((Admin) user).customQuery(userConnect);
+                    case 2 -> ((Admin) user).addUsr(userConnect);
+                    case 3 -> ((Admin) user).delUsr(userConnect);
+                    case 4 -> ((Admin) user).addType(userConnect);
+                    case 5 -> ((Admin) user).delType(userConnect);
+                    case 6 -> ((Admin) user).addTable(userConnect);
+                    case 7 -> ((Admin) user).delTable(userConnect);
+                    case 8 -> ((Admin) user).clearTable(userConnect);
+                    case 9 -> System.exit(0);
+                }
             } else if (user instanceof Worker) {
-                choose = scan.nextInt();
-                scan.nextLine();
                 switch (choose){
                     case 1:
                         ((Worker)user).addItem(userConnect);
@@ -59,7 +62,7 @@ public class Main {
                     case 3:
                         try {
                             ((Worker)user).delItem(userConnect);
-                        } catch (PSQLException e){
+                        } catch (PSQLException ignored){
 
                         }
                         break;
@@ -73,85 +76,17 @@ public class Main {
                         System.exit(0);
                 }
             } else {
-                choose = scan.nextInt();
-                scan.nextLine();
                 switch (choose) {
-                    case 1:
-                        String query = "select ed_izm, item_type, delivery, item_name,price from item_view where item_name = ?";
-                        System.out.println("Введите название товара:");
-                        String itemName = scan.nextLine();
-                        ResultSet queryResult = user.statement(query, userConnect, 1, itemName);
-                        while (queryResult.next()) {
-                            System.out.print(queryResult.getString("ed_izm") + " " +
-                                    queryResult.getString("item_type") + " " +
-                                    queryResult.getString("delivery") + "rue " +
-                                    queryResult.getString("item_name") + " " +
-                                    queryResult.getString("price") + "\n");
-                        }
-                        break;
-                    case 2:
-                        query = "select * from producer_item";
-                        queryResult = user.statement(query, userConnect);
-                        while (queryResult.next()) {
-                            System.out.print(queryResult.getString("item_name") + " " +
-                                    queryResult.getString("amount") + " " +
-                                    queryResult.getString("price") + " " +
-                                    queryResult.getString("ed_izm") + " " +
-                                    queryResult.getString("delivery") + " " +
-                                    queryResult.getString("prod_name") + " " +
-                                    queryResult.getString("phone_num") + "\n");
-                        }
-                        break;
-                    case 3:
-                        query = "select * from item_view where price = (select min(price) from item_view where item_type = " +
-                                "(select type_id from item_type where type_name = ?))";
-                        System.out.println("Введите название категории");
-                        String category = scan.nextLine();
-                        queryResult = user.statement(query, userConnect, 1, category);
-                        while (queryResult.next()) {
-                            System.out.print(queryResult.getString("ed_izm") + " " +
-                                    queryResult.getString("delivery") + " " +
-                                    queryResult.getString("item_name") + " " +
-                                    queryResult.getString("price") + "\n");
-                        }
-                        break;
-                    case 4:
-                        query = "select * from item_view where price = (select max(price) from item_view where item_type = " +
-                                "(select type_id from item_type where type_name = ?))";
-                        System.out.println("Введите название категории");
-                        category = scan.nextLine();
-                        queryResult = user.statement(query, userConnect, 1, category);
-                        while (queryResult.next()) {
-                            System.out.print(queryResult.getString("ed_izm") + " " +
-                                    queryResult.getString("delivery") + " " +
-                                    queryResult.getString("item_name") + " " +
-                                    queryResult.getString("price") + "\n");
-                        }
-                        break;
-                    case 5:
-                        query = "select * from item_view";
-                        queryResult = user.statement(query, userConnect);
-                        while (queryResult.next()) {
-                            System.out.print(queryResult.getString("ed_izm") + " " +
-                                    queryResult.getString("item_type") + " " +
-                                    queryResult.getString("delivery") + " " +
-                                    queryResult.getString("item_name") + " " +
-                                    queryResult.getString("price") + "\n");
-                        }
-                        break;
-                    case 6:
-                        query = "select amount, ed_izm, delivery, item_name, price from have_view left join item_view on item_view.item_id = have_view.item_id";
-                        queryResult = user.statement(query,userConnect);
-                        while (queryResult.next()) {
-                            System.out.print(queryResult.getString("amount") + " " +
-                                    queryResult.getString("ed_izm") + " " +
-                                    queryResult.getString("delivery") + " " +
-                                    queryResult.getString("item_name") + " " +
-                                    queryResult.getString("price") + "\n");
-                        }
-                        break;
-                    case 7:
-                        System.exit(0);
+                    case 1 -> ((User) user).findItem(userConnect);
+                    case 2 -> ((User) user).producerItem(userConnect);
+                    case 3 -> ((User) user).cheapCat(userConnect);
+                    case 4 -> ((User) user).expCat(userConnect);
+                    case 5 -> ((User) user).allItems(userConnect);
+                    case 6 -> ((User) user).showHave(userConnect);
+                    case 7 -> ((User) user).addToCart(userConnect);
+                    case 8 -> ((User)user).buyItem(userConnect);
+                    case 9 -> ((User)user).showCart(userConnect);
+                    case 10 -> System.exit(0);
                 }
             }
         }

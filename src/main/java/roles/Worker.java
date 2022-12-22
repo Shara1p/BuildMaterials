@@ -20,17 +20,7 @@ public class Worker extends User implements Logable{
     }
     public void showMaintable(Connection userConnect) throws SQLException {
         String query = "select * from work_edit order by item_id";
-        ResultSet queryResult = this.statement(query, userConnect);
-        while(queryResult.next()){
-            System.out.print(queryResult.getString("item_id") + " " +
-                queryResult.getString("item_type") + " " +
-                queryResult.getString("delivery") + " " +
-                queryResult.getString("item_name") + " " +
-                queryResult.getString("price") + " " +
-                queryResult.getString("prod") + " " +
-                queryResult.getString("amount") + " " +
-                queryResult.getString("sklad") + "\n");
-        }
+        this.printStatement(this.statement(query, userConnect),userConnect);
     }
 
     public void addItem(Connection userConnect) throws SQLException {
@@ -92,11 +82,6 @@ public class Worker extends User implements Logable{
     }
     public void showHave(Connection userConnect) throws SQLException{
         String query = "select * from have_view";
-        ResultSet queryResult = this.statement(query,userConnect);
-        while(queryResult.next()){
-            System.out.print(queryResult.getString("amount") + " " +
-                    queryResult.getString("sklad") + " " +
-                    queryResult.getString("item_id") + "\n");
-        }
+        this.printStatement(this.statement(query,userConnect),userConnect);
     }
 }

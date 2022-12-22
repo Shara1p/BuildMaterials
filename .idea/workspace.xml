@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65fe2252-b565-41e1-885b-ce52279d3bad" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/44ff9dff-f1f7-4715-a6e4-4d5222cb1907.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/44ff9dff-f1f7-4715-a6e4-4d5222cb1907.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/roles/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/roles/Logable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Logable.java" afterDir="false" />
@@ -75,7 +71,7 @@
   "keyToString": {
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/nerdy/IdeaProjects/BuildingMaterials",
+    "last_opened_file_path": "C:/Users/nerdy/IdeaProjects/TaskManager",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
@@ -117,7 +113,8 @@
       <workItem from="1671540653488" duration="4412000" />
       <workItem from="1671629612970" duration="3992000" />
       <workItem from="1671633616948" duration="552000" />
-      <workItem from="1671634176795" duration="4450000" />
+      <workItem from="1671634176795" duration="12014000" />
+      <workItem from="1671703283251" duration="16340000" />
     </task>
     <servers />
   </component>
